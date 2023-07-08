@@ -1,0 +1,171 @@
+2023-07-08T13:05:00.329+09:00  INFO [gateway-server,,] 1186284 --- [main] o.m.g.GatewayServerApplication           : The following 1 profile is active: "local"
+2023-07-08T13:05:02.040+09:00  INFO [gateway-server,,] 1186284 --- [main] .s.d.r.c.RepositoryConfigurationDelegate : Bootstrapping Spring Data JPA repositories in DEFAULT mode.
+2023-07-08T13:05:02.280+09:00  INFO [gateway-server,,] 1186284 --- [main] .s.d.r.c.RepositoryConfigurationDelegate : Finished Spring Data repository scanning in 213 ms. Found 1 JPA repository interfaces.
+2023-07-08T13:05:02.574+09:00  INFO [gateway-server,,] 1186284 --- [main] o.s.cloud.context.scope.GenericScope     : BeanFactory id=669973d7-9beb-3c6e-a5de-4c4145819114
+2023-07-08T13:05:02.782+09:00  INFO [gateway-server,,] 1186284 --- [main] trationDelegate$BeanPostProcessorChecker : Bean 'org.springframework.cloud.client.loadbalancer.reactive.LoadBalancerBeanPostProcessorAutoConfiguration' of type [org.springframework.cloud.client.loadbalancer.reactive.LoadBalancerBeanPostProcessorAutoConfiguration] is not eligible for getting processed by all BeanPostProcessors (for example: not eligible for auto-proxying)
+2023-07-08T13:05:02.783+09:00  INFO [gateway-server,,] 1186284 --- [main] trationDelegate$BeanPostProcessorChecker : Bean 'org.springframework.cloud.client.loadbalancer.reactive.LoadBalancerBeanPostProcessorAutoConfiguration$ReactorDeferringLoadBalancerFilterConfig' of type [org.springframework.cloud.client.loadbalancer.reactive.LoadBalancerBeanPostProcessorAutoConfiguration$ReactorDeferringLoadBalancerFilterConfig] is not eligible for getting processed by all BeanPostProcessors (for example: not eligible for auto-proxying)
+2023-07-08T13:05:02.786+09:00  INFO [gateway-server,,] 1186284 --- [main] trationDelegate$BeanPostProcessorChecker : Bean 'reactorDeferringLoadBalancerExchangeFilterFunction' of type [org.springframework.cloud.client.loadbalancer.reactive.DeferringLoadBalancerExchangeFilterFunction] is not eligible for getting processed by all BeanPostProcessors (for example: not eligible for auto-proxying)
+2023-07-08T13:05:03.832+09:00  INFO [gateway-server,,] 1186284 --- [main] o.hibernate.jpa.internal.util.LogHelper  : HHH000204: Processing PersistenceUnitInfo [name: default]
+2023-07-08T13:05:03.930+09:00  INFO [gateway-server,,] 1186284 --- [main] org.hibernate.Version                    : HHH000412: Hibernate ORM core version 6.1.7.Final
+2023-07-08T13:05:04.740+09:00  INFO [gateway-server,,] 1186284 --- [main] com.zaxxer.hikari.HikariDataSource       : HikariPool-1 - Starting...
+2023-07-08T13:05:04.876+09:00  INFO [gateway-server,,] 1186284 --- [main] com.zaxxer.hikari.pool.HikariPool        : HikariPool-1 - Added connection org.mariadb.jdbc.Connection@5c2a3f0c
+2023-07-08T13:05:04.878+09:00  INFO [gateway-server,,] 1186284 --- [main] com.zaxxer.hikari.HikariDataSource       : HikariPool-1 - Start completed.
+2023-07-08T13:05:04.905+09:00  INFO [gateway-server,,] 1186284 --- [main] SQL dialect                              : HHH000400: Using dialect: org.hibernate.dialect.MariaDB103Dialect
+2023-07-08T13:05:04.907+09:00  WARN [gateway-server,,] 1186284 --- [main] org.hibernate.orm.deprecation            : HHH90000026: MariaDB103Dialect has been deprecated; use org.hibernate.dialect.MariaDBDialect instead
+2023-07-08T13:05:06.130+09:00  WARN [gateway-server,,] 1186284 --- [main] o.m.jdbc.message.server.ErrorPacket      : Error: 1050-42S01: Table 'account' already exists
+2023-07-08T13:05:06.131+09:00  WARN [gateway-server,,] 1186284 --- [main] o.h.t.s.i.ExceptionHandlerLoggedImpl     : GenerationTarget encountered exception accepting command : Error executing DDL "
+    create table account (
+       account_id varchar(30) not null,
+        pass_wd varchar(100),
+        token varchar(500),
+        primary key (account_id)
+    ) engine=InnoDB" via JDBC Statement
+
+org.hibernate.tool.schema.spi.CommandAcceptanceException: Error executing DDL "
+    create table account (
+       account_id varchar(30) not null,
+        pass_wd varchar(100),
+        token varchar(500),
+        primary key (account_id)
+    ) engine=InnoDB" via JDBC Statement
+	at org.hibernate.tool.schema.internal.exec.GenerationTargetToDatabase.accept(GenerationTargetToDatabase.java:67) ~[hibernate-core-6.1.7.Final.jar:6.1.7.Final]
+	at org.hibernate.tool.schema.internal.SchemaCreatorImpl.applySqlString(SchemaCreatorImpl.java:502) ~[hibernate-core-6.1.7.Final.jar:6.1.7.Final]
+	at org.hibernate.tool.schema.internal.SchemaCreatorImpl.applySqlStrings(SchemaCreatorImpl.java:486) ~[hibernate-core-6.1.7.Final.jar:6.1.7.Final]
+	at org.hibernate.tool.schema.internal.SchemaCreatorImpl.createFromMetadata(SchemaCreatorImpl.java:363) ~[hibernate-core-6.1.7.Final.jar:6.1.7.Final]
+	at org.hibernate.tool.schema.internal.SchemaCreatorImpl.performCreation(SchemaCreatorImpl.java:176) ~[hibernate-core-6.1.7.Final.jar:6.1.7.Final]
+	at org.hibernate.tool.schema.internal.SchemaCreatorImpl.doCreation(SchemaCreatorImpl.java:144) ~[hibernate-core-6.1.7.Final.jar:6.1.7.Final]
+	at org.hibernate.tool.schema.internal.SchemaCreatorImpl.doCreation(SchemaCreatorImpl.java:128) ~[hibernate-core-6.1.7.Final.jar:6.1.7.Final]
+	at org.hibernate.tool.schema.spi.SchemaManagementToolCoordinator.performDatabaseAction(SchemaManagementToolCoordinator.java:254) ~[hibernate-core-6.1.7.Final.jar:6.1.7.Final]
+	at org.hibernate.tool.schema.spi.SchemaManagementToolCoordinator.lambda$process$5(SchemaManagementToolCoordinator.java:143) ~[hibernate-core-6.1.7.Final.jar:6.1.7.Final]
+	at java.base/java.util.HashMap.forEach(HashMap.java:1421) ~[na:na]
+	at org.hibernate.tool.schema.spi.SchemaManagementToolCoordinator.process(SchemaManagementToolCoordinator.java:140) ~[hibernate-core-6.1.7.Final.jar:6.1.7.Final]
+	at org.hibernate.internal.SessionFactoryImpl.<init>(SessionFactoryImpl.java:336) ~[hibernate-core-6.1.7.Final.jar:6.1.7.Final]
+	at org.hibernate.boot.internal.SessionFactoryBuilderImpl.build(SessionFactoryBuilderImpl.java:415) ~[hibernate-core-6.1.7.Final.jar:6.1.7.Final]
+	at org.hibernate.jpa.boot.internal.EntityManagerFactoryBuilderImpl.build(EntityManagerFactoryBuilderImpl.java:1423) ~[hibernate-core-6.1.7.Final.jar:6.1.7.Final]
+	at org.springframework.orm.jpa.vendor.SpringHibernateJpaPersistenceProvider.createContainerEntityManagerFactory(SpringHibernateJpaPersistenceProvider.java:66) ~[spring-orm-6.0.6.jar:6.0.6]
+	at org.springframework.orm.jpa.LocalContainerEntityManagerFactoryBean.createNativeEntityManagerFactory(LocalContainerEntityManagerFactoryBean.java:376) ~[spring-orm-6.0.6.jar:6.0.6]
+	at org.springframework.orm.jpa.AbstractEntityManagerFactoryBean.buildNativeEntityManagerFactory(AbstractEntityManagerFactoryBean.java:409) ~[spring-orm-6.0.6.jar:6.0.6]
+	at org.springframework.orm.jpa.AbstractEntityManagerFactoryBean.afterPropertiesSet(AbstractEntityManagerFactoryBean.java:396) ~[spring-orm-6.0.6.jar:6.0.6]
+	at org.springframework.orm.jpa.LocalContainerEntityManagerFactoryBean.afterPropertiesSet(LocalContainerEntityManagerFactoryBean.java:352) ~[spring-orm-6.0.6.jar:6.0.6]
+	at org.springframework.beans.factory.support.AbstractAutowireCapableBeanFactory.invokeInitMethods(AbstractAutowireCapableBeanFactory.java:1808) ~[spring-beans-6.0.6.jar:6.0.6]
+	at org.springframework.beans.factory.support.AbstractAutowireCapableBeanFactory.initializeBean(AbstractAutowireCapableBeanFactory.java:1758) ~[spring-beans-6.0.6.jar:6.0.6]
+	at org.springframework.beans.factory.support.AbstractAutowireCapableBeanFactory.doCreateBean(AbstractAutowireCapableBeanFactory.java:599) ~[spring-beans-6.0.6.jar:6.0.6]
+	at org.springframework.beans.factory.support.AbstractAutowireCapableBeanFactory.createBean(AbstractAutowireCapableBeanFactory.java:521) ~[spring-beans-6.0.6.jar:6.0.6]
+	at org.springframework.beans.factory.support.AbstractBeanFactory.lambda$doGetBean$0(AbstractBeanFactory.java:326) ~[spring-beans-6.0.6.jar:6.0.6]
+	at org.springframework.beans.factory.support.DefaultSingletonBeanRegistry.getSingleton(DefaultSingletonBeanRegistry.java:234) ~[spring-beans-6.0.6.jar:6.0.6]
+	at org.springframework.beans.factory.support.AbstractBeanFactory.doGetBean(AbstractBeanFactory.java:324) ~[spring-beans-6.0.6.jar:6.0.6]
+	at org.springframework.beans.factory.support.AbstractBeanFactory.getBean(AbstractBeanFactory.java:200) ~[spring-beans-6.0.6.jar:6.0.6]
+	at org.springframework.context.support.AbstractApplicationContext.getBean(AbstractApplicationContext.java:1132) ~[spring-context-6.0.6.jar:6.0.6]
+	at org.springframework.context.support.AbstractApplicationContext.finishBeanFactoryInitialization(AbstractApplicationContext.java:907) ~[spring-context-6.0.6.jar:6.0.6]
+	at org.springframework.context.support.AbstractApplicationContext.refresh(AbstractApplicationContext.java:584) ~[spring-context-6.0.6.jar:6.0.6]
+	at org.springframework.boot.web.reactive.context.ReactiveWebServerApplicationContext.refresh(ReactiveWebServerApplicationContext.java:66) ~[spring-boot-3.0.4.jar:3.0.4]
+	at org.springframework.boot.SpringApplication.refresh(SpringApplication.java:732) ~[spring-boot-3.0.4.jar:3.0.4]
+	at org.springframework.boot.SpringApplication.refreshContext(SpringApplication.java:434) ~[spring-boot-3.0.4.jar:3.0.4]
+	at org.springframework.boot.SpringApplication.run(SpringApplication.java:310) ~[spring-boot-3.0.4.jar:3.0.4]
+	at org.springframework.boot.SpringApplication.run(SpringApplication.java:1304) ~[spring-boot-3.0.4.jar:3.0.4]
+	at org.springframework.boot.SpringApplication.run(SpringApplication.java:1293) ~[spring-boot-3.0.4.jar:3.0.4]
+	at org.msa.gatewayserver.GatewayServerApplication.main(GatewayServerApplication.java:10) ~[main/:na]
+Caused by: java.sql.SQLSyntaxErrorException: (conn=789) Table 'account' already exists
+	at org.mariadb.jdbc.export.ExceptionFactory.createException(ExceptionFactory.java:282) ~[mariadb-java-client-3.1.2.jar:na]
+	at org.mariadb.jdbc.export.ExceptionFactory.create(ExceptionFactory.java:370) ~[mariadb-java-client-3.1.2.jar:na]
+	at org.mariadb.jdbc.message.ClientMessage.readPacket(ClientMessage.java:134) ~[mariadb-java-client-3.1.2.jar:na]
+	at org.mariadb.jdbc.client.impl.StandardClient.readPacket(StandardClient.java:855) ~[mariadb-java-client-3.1.2.jar:na]
+	at org.mariadb.jdbc.client.impl.StandardClient.readResults(StandardClient.java:794) ~[mariadb-java-client-3.1.2.jar:na]
+	at org.mariadb.jdbc.client.impl.StandardClient.readResponse(StandardClient.java:713) ~[mariadb-java-client-3.1.2.jar:na]
+	at org.mariadb.jdbc.client.impl.StandardClient.execute(StandardClient.java:637) ~[mariadb-java-client-3.1.2.jar:na]
+	at org.mariadb.jdbc.Statement.executeInternal(Statement.java:941) ~[mariadb-java-client-3.1.2.jar:na]
+	at org.mariadb.jdbc.Statement.execute(Statement.java:1067) ~[mariadb-java-client-3.1.2.jar:na]
+	at org.mariadb.jdbc.Statement.execute(Statement.java:458) ~[mariadb-java-client-3.1.2.jar:na]
+	at com.zaxxer.hikari.pool.ProxyStatement.execute(ProxyStatement.java:94) ~[HikariCP-5.0.1.jar:na]
+	at com.zaxxer.hikari.pool.HikariProxyStatement.execute(HikariProxyStatement.java) ~[HikariCP-5.0.1.jar:na]
+	at org.hibernate.tool.schema.internal.exec.GenerationTargetToDatabase.accept(GenerationTargetToDatabase.java:54) ~[hibernate-core-6.1.7.Final.jar:6.1.7.Final]
+	... 36 common frames omitted
+
+2023-07-08T13:05:06.209+09:00  INFO [gateway-server,,] 1186284 --- [main] o.h.e.t.j.p.i.JtaPlatformInitiator       : HHH000490: Using JtaPlatform implementation: [org.hibernate.engine.transaction.jta.platform.internal.NoJtaPlatform]
+2023-07-08T13:05:06.312+09:00  INFO [gateway-server,,] 1186284 --- [main] j.LocalContainerEntityManagerFactoryBean : Initialized JPA EntityManagerFactory for persistence unit 'default'
+2023-07-08T13:05:06.860+09:00  WARN [gateway-server,,] 1186284 --- [main] ocalVariableTableParameterNameDiscoverer : Using deprecated '-debug' fallback for parameter name resolution. Compile the affected code with '-parameters' instead or avoid its introspection: org.msa.gatewayserver.repository.AccountRepository
+2023-07-08T13:05:09.434+09:00  INFO [gateway-server,,] 1186284 --- [main] .g.c.LocalResponseCacheAutoConfiguration : Initializing Caffeine
+2023-07-08T13:05:09.516+09:00  INFO [gateway-server,,] 1186284 --- [main] o.s.c.g.r.RouteDefinitionRouteLocator    : Loaded RoutePredicateFactory [After]
+2023-07-08T13:05:09.517+09:00  INFO [gateway-server,,] 1186284 --- [main] o.s.c.g.r.RouteDefinitionRouteLocator    : Loaded RoutePredicateFactory [Before]
+2023-07-08T13:05:09.517+09:00  INFO [gateway-server,,] 1186284 --- [main] o.s.c.g.r.RouteDefinitionRouteLocator    : Loaded RoutePredicateFactory [Between]
+2023-07-08T13:05:09.517+09:00  INFO [gateway-server,,] 1186284 --- [main] o.s.c.g.r.RouteDefinitionRouteLocator    : Loaded RoutePredicateFactory [Cookie]
+2023-07-08T13:05:09.518+09:00  INFO [gateway-server,,] 1186284 --- [main] o.s.c.g.r.RouteDefinitionRouteLocator    : Loaded RoutePredicateFactory [Header]
+2023-07-08T13:05:09.518+09:00  INFO [gateway-server,,] 1186284 --- [main] o.s.c.g.r.RouteDefinitionRouteLocator    : Loaded RoutePredicateFactory [Host]
+2023-07-08T13:05:09.518+09:00  INFO [gateway-server,,] 1186284 --- [main] o.s.c.g.r.RouteDefinitionRouteLocator    : Loaded RoutePredicateFactory [Method]
+2023-07-08T13:05:09.518+09:00  INFO [gateway-server,,] 1186284 --- [main] o.s.c.g.r.RouteDefinitionRouteLocator    : Loaded RoutePredicateFactory [Path]
+2023-07-08T13:05:09.518+09:00  INFO [gateway-server,,] 1186284 --- [main] o.s.c.g.r.RouteDefinitionRouteLocator    : Loaded RoutePredicateFactory [Query]
+2023-07-08T13:05:09.518+09:00  INFO [gateway-server,,] 1186284 --- [main] o.s.c.g.r.RouteDefinitionRouteLocator    : Loaded RoutePredicateFactory [ReadBody]
+2023-07-08T13:05:09.519+09:00  INFO [gateway-server,,] 1186284 --- [main] o.s.c.g.r.RouteDefinitionRouteLocator    : Loaded RoutePredicateFactory [RemoteAddr]
+2023-07-08T13:05:09.519+09:00  INFO [gateway-server,,] 1186284 --- [main] o.s.c.g.r.RouteDefinitionRouteLocator    : Loaded RoutePredicateFactory [XForwardedRemoteAddr]
+2023-07-08T13:05:09.519+09:00  INFO [gateway-server,,] 1186284 --- [main] o.s.c.g.r.RouteDefinitionRouteLocator    : Loaded RoutePredicateFactory [Weight]
+2023-07-08T13:05:09.519+09:00  INFO [gateway-server,,] 1186284 --- [main] o.s.c.g.r.RouteDefinitionRouteLocator    : Loaded RoutePredicateFactory [CloudFoundryRouteService]
+2023-07-08T13:05:10.423+09:00  INFO [gateway-server,,] 1186284 --- [main] o.s.b.a.e.web.EndpointLinksResolver      : Exposing 3 endpoint(s) beneath base path '/actuator'
+2023-07-08T13:05:10.932+09:00  INFO [gateway-server,,] 1186284 --- [main] DiscoveryClientOptionalArgsConfiguration : Eureka HTTP Client uses RestTemplate.
+2023-07-08T13:05:11.064+09:00  INFO [gateway-server,,] 1186284 --- [main] o.s.c.n.eureka.InstanceInfoFactory       : Setting initial instance status as: STARTING
+2023-07-08T13:05:11.134+09:00  INFO [gateway-server,,] 1186284 --- [main] com.netflix.discovery.DiscoveryClient    : Initializing Eureka in region us-east-1
+2023-07-08T13:05:11.140+09:00  INFO [gateway-server,,] 1186284 --- [main] c.n.d.s.r.aws.ConfigClusterResolver      : Resolving eureka endpoints via configuration
+2023-07-08T13:05:11.173+09:00  INFO [gateway-server,,] 1186284 --- [main] com.netflix.discovery.DiscoveryClient    : Disable delta property : false
+2023-07-08T13:05:11.173+09:00  INFO [gateway-server,,] 1186284 --- [main] com.netflix.discovery.DiscoveryClient    : Single vip registry refresh property : null
+2023-07-08T13:05:11.174+09:00  INFO [gateway-server,,] 1186284 --- [main] com.netflix.discovery.DiscoveryClient    : Force full registry fetch : false
+2023-07-08T13:05:11.174+09:00  INFO [gateway-server,,] 1186284 --- [main] com.netflix.discovery.DiscoveryClient    : Application is null : false
+2023-07-08T13:05:11.175+09:00  INFO [gateway-server,,] 1186284 --- [main] com.netflix.discovery.DiscoveryClient    : Registered Applications size is zero : true
+2023-07-08T13:05:11.175+09:00  INFO [gateway-server,,] 1186284 --- [main] com.netflix.discovery.DiscoveryClient    : Application version is -1: true
+2023-07-08T13:05:11.175+09:00  INFO [gateway-server,,] 1186284 --- [main] com.netflix.discovery.DiscoveryClient    : Getting all instance registry info from the eureka server
+2023-07-08T13:05:11.474+09:00  INFO [gateway-server,,] 1186284 --- [main] com.netflix.discovery.DiscoveryClient    : The response status is 200
+2023-07-08T13:05:11.476+09:00  INFO [gateway-server,,] 1186284 --- [main] com.netflix.discovery.DiscoveryClient    : Starting heartbeat executor: renew interval is: 30
+2023-07-08T13:05:11.479+09:00  INFO [gateway-server,,] 1186284 --- [main] c.n.discovery.InstanceInfoReplicator     : InstanceInfoReplicator onDemand update allowed rate per min is 4
+2023-07-08T13:05:11.483+09:00  INFO [gateway-server,,] 1186284 --- [main] com.netflix.discovery.DiscoveryClient    : Discovery Client initialized at timestamp 1688789111482 with initial instances count: 0
+2023-07-08T13:05:11.486+09:00  INFO [gateway-server,,] 1186284 --- [main] o.s.c.n.e.s.EurekaServiceRegistry        : Registering application GATEWAY-SERVER with eureka with status UP
+2023-07-08T13:05:11.486+09:00  INFO [gateway-server,,] 1186284 --- [main] com.netflix.discovery.DiscoveryClient    : Saw local status change event StatusChangeEvent [timestamp=1688789111486, current=UP, previous=STARTING]
+2023-07-08T13:05:11.488+09:00  INFO [gateway-server,,] 1186284 --- [DiscoveryClient-InstanceInfoReplicator-0] com.netflix.discovery.DiscoveryClient    : DiscoveryClient_GATEWAY-SERVER/DESKTOP-4VPH1H9:gateway-server:8070: registering service...
+2023-07-08T13:05:11.531+09:00  INFO [gateway-server,,] 1186284 --- [DiscoveryClient-InstanceInfoReplicator-0] com.netflix.discovery.DiscoveryClient    : DiscoveryClient_GATEWAY-SERVER/DESKTOP-4VPH1H9:gateway-server:8070 - registration status: 204
+2023-07-08T13:05:11.915+09:00  INFO [gateway-server,,] 1186284 --- [main] o.s.b.web.embedded.netty.NettyWebServer  : Netty started on port 8070
+2023-07-08T13:05:11.917+09:00  INFO [gateway-server,,] 1186284 --- [main] .s.c.n.e.s.EurekaAutoServiceRegistration : Updating port to 8070
+2023-07-08T13:05:12.366+09:00  INFO [gateway-server,,] 1186284 --- [main] o.m.g.GatewayServerApplication           : Started GatewayServerApplication in 13.856 seconds (process running for 15.192)
+2023-07-08T13:05:41.483+09:00  INFO [gateway-server,,] 1186284 --- [DiscoveryClient-CacheRefreshExecutor-0] com.netflix.discovery.DiscoveryClient    : Disable delta property : false
+2023-07-08T13:05:41.484+09:00  INFO [gateway-server,,] 1186284 --- [DiscoveryClient-CacheRefreshExecutor-0] com.netflix.discovery.DiscoveryClient    : Single vip registry refresh property : null
+2023-07-08T13:05:41.484+09:00  INFO [gateway-server,,] 1186284 --- [DiscoveryClient-CacheRefreshExecutor-0] com.netflix.discovery.DiscoveryClient    : Force full registry fetch : false
+2023-07-08T13:05:41.484+09:00  INFO [gateway-server,,] 1186284 --- [DiscoveryClient-CacheRefreshExecutor-0] com.netflix.discovery.DiscoveryClient    : Application is null : false
+2023-07-08T13:05:41.484+09:00  INFO [gateway-server,,] 1186284 --- [DiscoveryClient-CacheRefreshExecutor-0] com.netflix.discovery.DiscoveryClient    : Registered Applications size is zero : true
+2023-07-08T13:05:41.484+09:00  INFO [gateway-server,,] 1186284 --- [DiscoveryClient-CacheRefreshExecutor-0] com.netflix.discovery.DiscoveryClient    : Application version is -1: false
+2023-07-08T13:05:41.485+09:00  INFO [gateway-server,,] 1186284 --- [DiscoveryClient-CacheRefreshExecutor-0] com.netflix.discovery.DiscoveryClient    : Getting all instance registry info from the eureka server
+2023-07-08T13:05:41.497+09:00  INFO [gateway-server,,] 1186284 --- [DiscoveryClient-CacheRefreshExecutor-0] com.netflix.discovery.DiscoveryClient    : The response status is 200
+2023-07-08T13:05:49.416+09:00  INFO [gateway-server,,] 1186284 --- [reactor-http-nio-3] o.m.g.filter.TokenCheckFilter            : token = eyJ0eXAiOiJKV1QiLCJhbGciOiJIUzUxMiJ9.eyJzdWIiOiJhZG1pbiIsImV4cCI6MTY4ODc4OTE0MywiaWF0IjoxNjg4Nzg5MTMzfQ.ei-aPK2anwYFyyGT_JjK2qvDPop7U4LHjktdhgFaaJvACgUahQ7_ahJK2ZgribvuI0P1xTE8yEgQm5K2qEnHfg
+2023-07-08T13:05:49.611+09:00  INFO [gateway-server,,] 1186284 --- [reactor-http-nio-3] o.m.g.filter.TokenCheckFilter            : user authentication check result = true
+2023-07-08T13:05:49.720+09:00  WARN [gateway-server,,] 1186284 --- [reactor-http-nio-3] o.s.c.l.core.RoundRobinLoadBalancer      : No servers available for service: item-service
+2023-07-08T13:06:01.373+09:00  INFO [gateway-server,,] 1186284 --- [reactor-http-nio-3] o.m.g.filter.TokenCheckFilter            : token = eyJ0eXAiOiJKV1QiLCJhbGciOiJIUzUxMiJ9.eyJzdWIiOiJhZG1pbiIsImV4cCI6MTY4ODc4OTE0MywiaWF0IjoxNjg4Nzg5MTMzfQ.ei-aPK2anwYFyyGT_JjK2qvDPop7U4LHjktdhgFaaJvACgUahQ7_ahJK2ZgribvuI0P1xTE8yEgQm5K2qEnHfg
+2023-07-08T13:06:01.378+09:00  INFO [gateway-server,,] 1186284 --- [reactor-http-nio-3] o.m.g.filter.TokenCheckFilter            : user authentication check result = true
+2023-07-08T13:06:01.386+09:00  WARN [gateway-server,,] 1186284 --- [reactor-http-nio-3] o.s.c.l.core.RoundRobinLoadBalancer      : No servers available for service: item-service
+2023-07-08T13:06:09.850+09:00  INFO [gateway-server,,] 1186284 --- [reactor-http-nio-3] o.m.g.filter.TokenCheckFilter            : token = eyJ0eXAiOiJKV1QiLCJhbGciOiJIUzUxMiJ9.eyJzdWIiOiJhZG1pbiIsImV4cCI6MTY4ODc4OTE0MywiaWF0IjoxNjg4Nzg5MTMzfQ.ei-aPK2anwYFyyGT_JjK2qvDPop7U4LHjktdhgFaaJvACgUahQ7_ahJK2ZgribvuI0P1xTE8yEgQm5K2qEnHfg
+2023-07-08T13:06:09.869+09:00  INFO [gateway-server,,] 1186284 --- [reactor-http-nio-3] o.m.g.filter.TokenCheckFilter            : user authentication check result = true
+2023-07-08T13:06:09.872+09:00  WARN [gateway-server,,] 1186284 --- [reactor-http-nio-3] o.s.c.l.core.RoundRobinLoadBalancer      : No servers available for service: item-service
+2023-07-08T13:06:16.255+09:00  INFO [gateway-server,,] 1186284 --- [reactor-http-nio-3] o.m.g.filter.TokenCheckFilter            : token = eyJ0eXAiOiJKV1QiLCJhbGciOiJIUzUxMiJ9.eyJzdWIiOiJhZG1pbiIsImV4cCI6MTY4ODc4OTE0MywiaWF0IjoxNjg4Nzg5MTMzfQ.ei-aPK2anwYFyyGT_JjK2qvDPop7U4LHjktdhgFaaJvACgUahQ7_ahJK2ZgribvuI0P1xTE8yEgQm5K2qEnHfg
+2023-07-08T13:06:16.257+09:00  INFO [gateway-server,,] 1186284 --- [reactor-http-nio-3] o.m.g.filter.TokenCheckFilter            : user authentication check result = true
+2023-07-08T13:06:16.295+09:00  INFO [gateway-server,,] 1186284 --- [reactor-http-nio-3] o.m.gatewayserver.filter.LoggingFilter   : request.id: 2c30aa49-4, method: POST , url: http://localhost:8070/v1/item/add/C
+2023-07-08T13:06:16.306+09:00  INFO [gateway-server,,] 1186284 --- [boundedElastic-1] o.m.gatewayserver.filter.LoggingFilter   : request.id: 2c30aa49-4, request body :{
+    "id" : "1",
+    "name" : "item1",
+    "description" : "item description1",
+    "count" : 100
+}
+2023-07-08T13:06:27.218+09:00  INFO [gateway-server,,] 1186284 --- [reactor-http-nio-3] o.m.gatewayserver.filter.LoggingFilter   : request.id: 2c30aa49-4, method: POST, url: http://localhost:8070/v1/item/add/C, 
+response body :{"code":"200","message":"success"}
+2023-07-08T13:07:16.013+09:00  INFO [gateway-server,,] 1186284 --- [reactor-http-nio-3] o.m.g.filter.TokenCheckFilter            : token = eyJ0eXAiOiJKV1QiLCJhbGciOiJIUzUxMiJ9.eyJzdWIiOiJhZG1pbiIsImV4cCI6MTY4ODc4OTE0MywiaWF0IjoxNjg4Nzg5MTMzfQ.ei-aPK2anwYFyyGT_JjK2qvDPop7U4LHjktdhgFaaJvACgUahQ7_ahJK2ZgribvuI0P1xTE8yEgQm5K2qEnHfg
+2023-07-08T13:07:16.016+09:00  INFO [gateway-server,,] 1186284 --- [reactor-http-nio-3] o.m.g.filter.TokenCheckFilter            : user authentication check result = true
+2023-07-08T13:07:16.020+09:00  INFO [gateway-server,,] 1186284 --- [reactor-http-nio-3] o.m.gatewayserver.filter.LoggingFilter   : request.id: 2c30aa49-5, method: POST , url: http://localhost:8070/v1/item/add/C
+2023-07-08T13:07:16.022+09:00  INFO [gateway-server,,] 1186284 --- [boundedElastic-1] o.m.gatewayserver.filter.LoggingFilter   : request.id: 2c30aa49-5, request body :{
+    "id" : "1",
+    "name" : "item1",
+    "description" : "item description1",
+    "count" : 100
+}
+2023-07-08T13:07:26.508+09:00  INFO [gateway-server,,] 1186284 --- [reactor-http-nio-3] o.m.gatewayserver.filter.LoggingFilter   : request.id: 2c30aa49-5, method: POST, url: http://localhost:8070/v1/item/add/C, 
+response body :{"code":"200","message":"success"}
+2023-07-08T13:08:28.324+09:00  INFO [gateway-server,,] 1186284 --- [RMI TCP Connection(7)-127.0.0.1] inMXBeanRegistrar$SpringApplicationAdmin : Application shutdown requested.
+2023-07-08T13:08:28.326+09:00  INFO [gateway-server,,] 1186284 --- [RMI TCP Connection(7)-127.0.0.1] o.s.c.n.e.s.EurekaServiceRegistry        : Unregistering application GATEWAY-SERVER with eureka with status DOWN
+2023-07-08T13:08:28.326+09:00  INFO [gateway-server,,] 1186284 --- [RMI TCP Connection(7)-127.0.0.1] com.netflix.discovery.DiscoveryClient    : Saw local status change event StatusChangeEvent [timestamp=1688789308326, current=DOWN, previous=UP]
+2023-07-08T13:08:28.326+09:00  INFO [gateway-server,,] 1186284 --- [DiscoveryClient-InstanceInfoReplicator-0] com.netflix.discovery.DiscoveryClient    : DiscoveryClient_GATEWAY-SERVER/DESKTOP-4VPH1H9:gateway-server:8070: registering service...
+2023-07-08T13:08:28.332+09:00  INFO [gateway-server,,] 1186284 --- [DiscoveryClient-InstanceInfoReplicator-0] com.netflix.discovery.DiscoveryClient    : DiscoveryClient_GATEWAY-SERVER/DESKTOP-4VPH1H9:gateway-server:8070 - registration status: 204
+2023-07-08T13:08:28.514+09:00  INFO [gateway-server,,] 1186284 --- [RMI TCP Connection(7)-127.0.0.1] j.LocalContainerEntityManagerFactoryBean : Closing JPA EntityManagerFactory for persistence unit 'default'
+2023-07-08T13:08:28.516+09:00  INFO [gateway-server,,] 1186284 --- [RMI TCP Connection(7)-127.0.0.1] com.zaxxer.hikari.HikariDataSource       : HikariPool-1 - Shutdown initiated...
+2023-07-08T13:08:28.519+09:00  INFO [gateway-server,,] 1186284 --- [RMI TCP Connection(7)-127.0.0.1] com.zaxxer.hikari.HikariDataSource       : HikariPool-1 - Shutdown completed.
